@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event World</title>
+  
+  <style>
+    .contents {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding: 15px;
+    }
+    
+    #generateButton {
+      margin-top: 5px;
+      margin-bottom: 15px;;
+    }
+  </style>
+</head>
+<body>
+<div class="contents" align="center" hidden>
+  <button id="incrementButton">pencet aku tapi jgn keras-keras :)</button>
+  <h3>s3l4M@t K4Mv uDa8 p3NceT <span id="count">0</span>X</h3>
+  <p>coba pencet aku sampe 10x hehe</p>
+</div>
+ 
+<script>
+  function increment() {
+    document.getElementById('count').innerText++; //elemen melakukan proses increment(++) pada elemen yang memiliki atribut id dgn nilai count
+
+    if (document.getElementById('count').innerText == 10) { //menambahkan fungsi if innertext telah menyampai angka 7
+      const hiddenMessage = document.createElement('h4');
+      hiddenMessage.innerText = 'ululululuuu siapa si keren bgt?? ya kita lahh HAHAHAHA';
+      const image = document.createElement('img');
+      image.setAttribute('src', 'hamba.JPG');
+      image.style.width = '300px';
+      const contents = document.querySelector('.contents');
+      contents.appendChild(hiddenMessage).appendChild(image);
+    }
+  }
+
+  function welcome() {
+    alert('Klik ok untuk mulai, kalo gamau juga gpp g maksa wleee:p'); //membuat pop-up 
+    const contents = document.querySelector('.contents'); //mengambil elemen content
+    contents.removeAttribute('hidden'); //menghilangkan atribut hidden pada contents
+  }
+  
+  
+  //document.getElementById('incrementButton').onclick = increment; //event handler pada button
+
+  //document.body.onload = welcome; //memberikan event onload dengan fungsi welcome pada elemen body
+
+  // menggunakan addEventListener
+    window.addEventListener('load', welcome);
+    document.getElementById('incrementButton').addEventListener('click', increment);
+
+</script>
+</body>
+</html>
